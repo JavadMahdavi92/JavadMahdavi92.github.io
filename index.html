@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
   <title>Mohammad Javad Mahdavi</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     *{
@@ -28,27 +27,30 @@
     }
 
     header{
-      background:white;
+      background:rgba(255,255,255,0.95);
       padding:18px 8%;
       display:flex;
       justify-content:space-between;
       align-items:center;
       position:sticky;
       top:0;
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      box-shadow:0 2px 12px rgba(0,0,0,0.05);
       z-index:1000;
+      backdrop-filter:blur(10px);
     }
 
     header h3{
       font-size:1.05rem;
       color:#111827;
+      font-weight:700;
     }
 
     nav a{
       text-decoration:none;
       color:#374151;
       margin-left:25px;
-      font-weight:500;
+      font-weight:600;
+      font-size:0.95rem;
       transition:0.3s;
     }
 
@@ -57,13 +59,15 @@
     }
 
     .hero{
-      min-height:auto;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:110px 8% 80px;
+      padding:95px 8% 60px;
       gap:60px;
       flex-wrap:wrap;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(37,99,235,0.10), transparent 28%),
+        linear-gradient(135deg,#f8fbff 0%,#eef3f9 100%);
     }
 
     .hero-text{
@@ -71,8 +75,19 @@
       min-width:300px;
     }
 
+    .tag{
+      display:inline-block;
+      background:#e0ecff;
+      color:#1d4ed8;
+      padding:7px 14px;
+      border-radius:999px;
+      font-size:0.85rem;
+      font-weight:700;
+      margin-bottom:22px;
+    }
+
     .hero-text h1{
-      font-size:3.1rem;
+      font-size:3rem;
       margin-bottom:14px;
       color:#111827;
       line-height:1.15;
@@ -81,7 +96,7 @@
     .hero-text h2{
       font-size:1.15rem;
       color:#2563eb;
-      font-weight:500;
+      font-weight:600;
       margin-bottom:24px;
     }
 
@@ -89,29 +104,65 @@
       font-size:1.02rem;
       color:#4b5563;
       max-width:680px;
+      margin-bottom:28px;
     }
 
-    .hero-image{
-      flex:0 0 auto;
+    .buttons{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 20px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+    .btn-primary{
+      background:#2563eb;
+      color:white;
+    }
+
+    .btn-secondary{
+      background:white;
+      color:#2563eb;
+      border:1px solid #dbeafe;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 25px rgba(37,99,235,0.15);
     }
 
     .hero-image img{
-      width:260px;
-      height:260px;
+      width:255px;
+      height:255px;
       object-fit:cover;
       border-radius:50%;
-      box-shadow:0 15px 40px rgba(0,0,0,0.12);
+      box-shadow:0 18px 45px rgba(0,0,0,0.16);
+      border:6px solid white;
     }
 
     section{
-      padding:65px 8%;
+      padding:58px 8%;
     }
 
     .section-title{
       font-size:2rem;
-      margin-bottom:32px;
+      margin-bottom:28px;
       color:#111827;
       line-height:1.2;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.5fr 1fr;
+      gap:25px;
+      align-items:stretch;
     }
 
     .cards{
@@ -123,7 +174,7 @@
 
     .card{
       background:white;
-      padding:30px;
+      padding:28px;
       border-radius:20px;
       box-shadow:0 10px 30px rgba(0,0,0,0.05);
       transition:0.3s;
@@ -145,17 +196,47 @@
       font-size:0.97rem;
     }
 
-    .contact a{
-      display:inline-block;
-      margin-right:20px;
-      margin-top:15px;
-      text-decoration:none;
-      color:#2563eb;
-      font-weight:600;
+    .mini-list{
+      display:grid;
+      gap:12px;
+      margin-top:8px;
     }
 
-    .contact a:hover{
-      text-decoration:underline;
+    .mini-item{
+      background:#f3f6fb;
+      padding:14px 16px;
+      border-radius:14px;
+      font-weight:600;
+      color:#374151;
+    }
+
+    .contact-box{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .contact-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .contact-links a{
+      text-decoration:none;
+      color:#2563eb;
+      background:#eff6ff;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+    .contact-links a:hover{
+      background:#2563eb;
+      color:white;
     }
 
     footer{
@@ -166,6 +247,12 @@
       margin-top:30px;
     }
 
+    @media(max-width:900px){
+      .about-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
     @media(max-width:768px){
       header{
         padding:16px 6%;
@@ -173,12 +260,12 @@
 
       .hero{
         text-align:center;
-        padding:75px 6% 55px;
+        padding:70px 6% 50px;
         justify-content:center;
       }
 
       .hero-text h1{
-        font-size:2.35rem;
+        font-size:2.3rem;
       }
 
       .hero-image img{
@@ -186,8 +273,12 @@
         height:220px;
       }
 
+      .buttons{
+        justify-content:center;
+      }
+
       section{
-        padding:50px 6%;
+        padding:48px 6%;
       }
 
       nav{
@@ -213,16 +304,23 @@
 <section class="hero">
 
   <div class="hero-text">
+    <span class="tag">Finance | Accounting | Business Operations</span>
+
     <h1>Mohammad Javad Mahdavi</h1>
 
     <h2>Financial Accountant at ALBA Berlin</h2>
 
     <p>
-      Finance and accounting professional with international experience in accounting operations,
-      financial planning, sales strategy, and client management. Currently working at ALBA Berlin,
-      with a strong interest in international business environments, financial systems,
-      and organizational development.
+      Finance and accounting professional based in Berlin, with international experience
+      in accounting operations, financial planning, sales strategy, and client management.
+      His work combines financial accuracy, digital finance systems, and practical business understanding.
     </p>
+
+    <div class="buttons">
+      <a class="btn btn-primary" href="mailto:mohammad.mahdavi@albaberlin.de">Email Me</a>
+      <a class="btn btn-secondary" href="https://www.linkedin.com/in/mohammad-mahdavi-2baa9b183/?locale=en" target="_blank">LinkedIn</a>
+      <a class="btn btn-secondary" href="https://www.albaberlin.de/verein/ueber-uns/organisation-beschaeftigte#:~:text=Mohammad%20Mahdavi,Buchhaltung%20/%20Accounting" target="_blank">ALBA Profile</a>
+    </div>
   </div>
 
   <div class="hero-image">
@@ -235,22 +333,37 @@
 
   <h2 class="section-title">About</h2>
 
-  <div class="card">
-    <p>
-      I am a finance and accounting professional based in Berlin, with experience across
-      accounting operations, financial planning, business development, and client-facing roles.
-      My professional background combines operational accuracy, financial systems knowledge,
-      and practical business experience in both Germany and Iran.
-    </p>
+  <div class="about-grid">
 
-    <br>
+    <div class="card">
+      <p>
+        I am a finance and accounting professional based in Berlin, with experience across
+        accounting operations, financial planning, business development, and client-facing roles.
+        My professional background combines operational accuracy, financial systems knowledge,
+        and practical business experience in both Germany and Iran.
+      </p>
 
-    <p>
-      In my current role at ALBA Berlin Basketballteam GmbH, I work with accounting processes,
-      payment operations, SAP, and Microsoft Dynamics 365 Business Central. I am particularly
-      interested in international business environments, financial process improvement, and
-      the connection between finance, strategy, and organizational growth.
-    </p>
+      <br>
+
+      <p>
+        In my current role at ALBA Berlin Basketballteam GmbH, I work with accounting processes,
+        payment operations, SAP, and Microsoft Dynamics 365 Business Central. I am particularly
+        interested in international business environments, financial process improvement, and
+        the connection between finance, strategy, and organizational growth.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Professional Focus</h3>
+
+      <div class="mini-list">
+        <div class="mini-item">Accounting Operations</div>
+        <div class="mini-item">Financial Systems</div>
+        <div class="mini-item">Payment Processing</div>
+        <div class="mini-item">Business Development</div>
+      </div>
+    </div>
+
   </div>
 
 </section>
@@ -356,10 +469,17 @@
 
   <h2 class="section-title">Contact</h2>
 
-  <div class="contact">
-    <a href="mailto:yourmail@email.com">Email</a>
-    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-    <a href="https://github.com/JavadMahdavi92" target="_blank">GitHub</a>
+  <div class="contact-box">
+    <p>
+      For professional communication, collaboration, or networking, please use the links below.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:mohammad.mahdavi@albaberlin.de">Email</a>
+      <a href="https://www.linkedin.com/in/mohammad-mahdavi-2baa9b183/?locale=en" target="_blank">LinkedIn</a>
+      <a href="https://www.albaberlin.de/verein/ueber-uns/organisation-beschaeftigte#:~:text=Mohammad%20Mahdavi,Buchhaltung%20/%20Accounting" target="_blank">ALBA Berlin</a>
+      <a href="https://github.com/JavadMahdavi92" target="_blank">GitHub</a>
+    </div>
   </div>
 
 </section>
@@ -370,4 +490,3 @@
 
 </body>
 </html>
-```
